@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Custom Class
+//Custom Classes
 [System.Serializable]
 public class CurrentWeather
 {
+    //The actual class that the APIPull is pulling from
+    //Place pulls lon and lat to create a new instance of Place
     public Place coord = new Place();
+    //Pulling from the weather class and making a list of the current Weather in a new instance
     public Weather[] weather = new Weather[1];
+    //Pulling from the Main class to get all the basic data of the weather in a new instance
     public Main main = new Main();
 }
 [System.Serializable]
