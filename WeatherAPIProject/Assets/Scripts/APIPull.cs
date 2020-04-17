@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 public class APIPull : MonoBehaviour
 {
+    [Header("Config")]
+    public WeatherHandler handler;
     public string city;
     public string state;
-    string url;
+
+    [Header("Debug")]
+
     //This variable is pulling from the CurrentWeather script to make a new instance of this variable
     public CurrentWeather currentWeather;
 
@@ -25,19 +29,19 @@ public class APIPull : MonoBehaviour
     //The first possible pull is getting the city and state from the user 
     public void AquireWeather(string city, string state)
     {
-        url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=529b090848369d167a6b1f9acbbf1c0c";
+        string url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=529b090848369d167a6b1f9acbbf1c0c";
         StartCoroutine(GetRequest(url));
     }
     //The second possible pull is getting the zip code from the user as a int and converting it to a string
     public void AquireWeather(int zip)
     {
-        url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip.ToString() + "&appid=529b090848369d167a6b1f9acbbf1c0c";
+        string url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip.ToString() + "&appid=529b090848369d167a6b1f9acbbf1c0c";
         StartCoroutine(GetRequest(url));
     }
     //The last pull is getting the city name from the user, most simple input
     public void AquireWeather(string city)
     {
-        url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=529b090848369d167a6b1f9acbbf1c0c";
+        string url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=529b090848369d167a6b1f9acbbf1c0c";
         StartCoroutine(GetRequest(url));
     }
     //Some copied code from unity documentation
@@ -58,6 +62,7 @@ public class APIPull : MonoBehaviour
             else
             {
                 currentWeather = JsonUtility.FromJson<CurrentWeather>(webRequest.downloadHandler.text);
+                handler.SetTheWeather(currentWeather);
             }
         }
         //TO DO:Make events happen (Carter)
