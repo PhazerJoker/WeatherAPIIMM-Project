@@ -27,3 +27,6 @@ Eclypso. (2019, February 6). Skybox add-on. Unity Asset Store - The Best Assets 
 
 Random Games. (2017, November 10). Awesome low poly fantasy clouds. Unity Asset Store - The Best Assets for Game Making. 
 	https://assetstore.unity.com/packages/3d/environments/awesome-low-poly-fantasy-clouds-97654
+	
+GeoMetriKManiac. (2014, December 5) WindMill 3D asset. CGTrader. 
+	https://www.cgtrader.com/free-3d-models/exterior/industrial/wind-mill--2
