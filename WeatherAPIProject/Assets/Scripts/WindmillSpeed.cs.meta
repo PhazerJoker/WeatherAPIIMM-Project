@@ -3,7 +3,8 @@ guid: 2d3bcd2107592154fbeec64e01705e22
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - windMill: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
