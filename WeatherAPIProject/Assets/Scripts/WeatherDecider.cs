@@ -3,37 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 public class WeatherDecider : MonoBehaviour
 {
+
+
+    public GameObject[] clearObjects;
+    public GameObject[] cloudyObjects;
+    public GameObject[] rainyObjects;
     public void Setweather(string condition)
     {
         TurnOffAll();
-        if(condition == "Sunny")
+        if (condition == "Clear")
         {
-            GameObject[] sunnyObjects = GameObject.FindGameObjectsWithTag("Sunny");
-            foreach(GameObject go in sunnyObjects)
+            foreach (GameObject go in clearObjects)
             {
                 go.SetActive(true);
-            } 
+            }
+        }
+        else if (condition == "Clouds")
+        {
+            foreach (GameObject go in cloudyObjects)
+            {
+                go.SetActive(true);
+            }
+        }
+        else if (condition == "Rain")
+        {
+            foreach (GameObject go in rainyObjects)
+            {
+                go.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject go in clearObjects)
+            {
+                go.SetActive(true);
+            }
+
         }
     }
     public void TurnOffAll()
     {
         //disables all weather objects
-    GameObject[] sunnyObjects = GameObject.FindGameObjectsWithTag("Sunny");
-            foreach(GameObject go in sunnyObjects)
-            {
-                go.SetActive(false);
-            }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        clearObjects = GameObject.FindGameObjectsWithTag("Clear");
+        foreach (GameObject go in clearObjects)
+        {
+            go.SetActive(false);
+        }
+        cloudyObjects = GameObject.FindGameObjectsWithTag("Cloudy");
+        foreach (GameObject go in cloudyObjects)
+        {
+            go.SetActive(false);
+        }
+        rainyObjects = GameObject.FindGameObjectsWithTag("Rainy");
+        foreach (GameObject go in rainyObjects)
+        {
+            go.SetActive(false);
+        }
     }
 }
