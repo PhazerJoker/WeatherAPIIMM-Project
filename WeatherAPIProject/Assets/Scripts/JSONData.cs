@@ -17,6 +17,7 @@ public class CurrentWeather
     //Pulling from the Wind Class to get the basic speed of the wind in a new instance
     public Wind wind = new Wind();
 }
+//This is a bunch of data that is in the format of the JSON file we are pulling it from
 [System.Serializable]
 public class Place
 {

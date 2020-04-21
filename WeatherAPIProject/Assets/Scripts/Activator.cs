@@ -5,7 +5,7 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     public GameObject[] activateOnStart;
-    // Start is called before the first frame update
+    // On Awake the gameobjects clear, cloudy, and rainy are set active.
     void Awake()
     {
         foreach (GameObject go in activateOnStart)
