@@ -5,12 +5,12 @@ using UnityEngine;
 public class WeatherHandler : MonoBehaviour
 {
     public WeatherDecider weatherDecider;
-
+    public WindmillScript windmillScript;
     public void SetTheWeather(CurrentWeather weather)
     {
         weatherDecider.Setweather(weather.weather[0].main);
 
-        //call the windmill setspeed function
+        windmillScript.WindmillSpeed(weather.wind.speed);
 
     }
 }
