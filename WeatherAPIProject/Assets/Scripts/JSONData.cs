@@ -14,6 +14,8 @@ public class CurrentWeather
     public Weather[] weather = new Weather[1];
     //Pulling from the Main class to get all the basic data of the weather in a new instance
     public Main main = new Main();
+    //Pulling from the Wind Class to get the basic speed of the wind in a new instance
+    public Wind wind = new Wind();
 }
 [System.Serializable]
 public class Place
