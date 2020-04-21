@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WeatherHandler : MonoBehaviour
 {
+    public WeatherDecider weatherDecider;
+
     public void SetTheWeather(CurrentWeather weather)
     {
-        //Call the weather decider function
+        weatherDecider.Setweather(weather.weather[0].main);
 
-        //call the windmill setspeed functioon
+        //call the windmill setspeed function
 
     }
 }
