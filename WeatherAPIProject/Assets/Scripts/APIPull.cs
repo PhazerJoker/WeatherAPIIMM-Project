@@ -65,6 +65,5 @@ public class APIPull : MonoBehaviour
                 handler.SetTheWeather(currentWeather);
             }
         }
-        //TO DO:Make events happen (Carter)
     }
 }
