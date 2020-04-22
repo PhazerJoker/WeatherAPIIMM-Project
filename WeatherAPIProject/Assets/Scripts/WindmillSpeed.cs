@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class WindmillSpeed : MonoBehaviour
 {
+    //Variable creations
     public GameObject windmillFan;
-    public void setSpeed(int windSpeed)
+    public float windSpeed;
+    public float spin;
+    public void setSpeed(float newWindSpeed)
     {
-        
-        //Turns the windmill wheel model windSpeed degrees per second
-                windmillFan.transform.Rotate(windSpeed * Time.deltaTime, 0, 0);
+        //Taking the newWindSpeed float and giving it to the windSpeed float
+        windSpeed = (newWindSpeed);
     }
-    
-    
-
+    void Update()
+    {
+        //Every frame it turns the windmill fan model (windSpeed * 2 * Time passed) degrees per second
+        spin = windSpeed * 50 * Time.deltaTime;
+        windmillFan.transform.Rotate(spin, 0, 0);
+    }
 }
 
